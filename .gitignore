@@ -7,6 +7,6 @@ wheels/
 *.egg-info
 _import_/*.csv
 */_output_/
-_export_/
+export/
 # Virtual environments
 .venv
