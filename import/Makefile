@@ -16,7 +16,7 @@ clean:
 	rm output/*
 
 output/prisoners.parquet: \
-		import.py \
+		src/import.py \
 		../_import_/p23stt03.csv \
 		../_import_/p23stt05.csv
 	-mkdir output/

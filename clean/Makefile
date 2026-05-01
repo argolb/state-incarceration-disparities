@@ -16,7 +16,7 @@ clean:
 	rm output/*
 
 output/clean.parquet: \
-		clean.py \
+		src/clean.py \
 		../import/output/prisoners.parquet
 	-mkdir output/
 	$(HERE)/.venv/bin/python $< \

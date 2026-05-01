@@ -16,7 +16,7 @@ clean:
 	rm output/*
 
 output/transform.parquet: \
-		transform.py \
+		src/transform.py \
 		../clean/output/clean.parquet
 	-mkdir output/
 	$(HERE)/.venv/bin/python $< \
