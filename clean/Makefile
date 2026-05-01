@@ -2,7 +2,7 @@
 #  :vim ft=make:
 # Author: LB
 # Maintainer(s): LB
-#  import/Makefile
+#  clean/Makefile
 # -----------------------------------------------------------
 
 HERE := $(shell git rev-parse --show-toplevel)
@@ -10,19 +10,17 @@ HERE := $(shell git rev-parse --show-toplevel)
 .PHONY: all clean
 
 
-all: output/prisoners.parquet
+all: output/clean.parquet
 
 clean:
 	rm output/*
 
-output/prisoners.parquet: \
-		import.py \
-		../_import_/p23stt03.csv \
-		../_import_/p23stt05.csv
+output/clean.parquet: \
+		clean.py \
+		../import/output/prisoners.parquet
 	-mkdir output/
 	$(HERE)/.venv/bin/python $< \
-		--input-counts=../_import_/p23stt03.csv \
-		--input-rates=../_import_/p23stt05.csv \
+		--input=../import/output/prisoners.parquet \
 		--output=$@
 
 # done
